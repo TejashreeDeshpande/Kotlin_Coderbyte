@@ -1,0 +1,19 @@
+fun main() {
+  println("result - ${runLength("wwwbbbwww")}")
+}
+
+fun runLength(str: String): String {
+    var returnStr = ""
+    var count = 1
+    for (i in 0 until str.length-1) {
+        
+        if (str[i] == str[i+1]) {
+            count += 1
+        } else {
+            returnStr += "$count${str[i]}"
+            count = 1
+        }
+    }
+    returnStr += "$count${str[str.length-1]}"
+    return returnStr
+}
